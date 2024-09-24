@@ -1,7 +1,7 @@
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-camera.position.z = 200;
+camera.position.z = 5;
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -28,17 +28,17 @@ scene.add(backLight);
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setTexturePath('/examples/3d-obj-loader/assets/');
 mtlLoader.setPath('/examples/3d-obj-loader/assets/');
-mtlLoader.load('r2-d2.mtl', function (materials) {
+mtlLoader.load('modelo1.mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('/examples/3d-obj-loader/assets/');
-    objLoader.load('r2-d2.obj', function (object) {
+    objLoader.load('modelo1.obj', function (object) {
 
         scene.add(object);
-        object.position.y -= 60;
+        object.position.y -= 1;
 
     });
 
